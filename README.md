@@ -1,6 +1,6 @@
-# DL-SUM4QA
+# OptiRef
 
-# Summaries for Query Answering in DL
+# Optimization for data management in KBs
 
 ## Installation
 
