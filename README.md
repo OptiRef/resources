@@ -3,6 +3,8 @@
 # Optimization for data management in KBs
 
 ## Installation
+### Data generation
+LUBM data sets have been generated with the LUBM data generator and the ontology LUBM-ex-20.owl both available at http://www.informatik.uni-bremen.de/~clu/combined/
 
 ### Loading data
 
