@@ -6,14 +6,13 @@
 
 * Java 14
 * Maven
-* One or more of the following DBMS:
+* One or more of the following DBMSs:
   * DB2 (v11.5)
   * MySQL Community (v8.0.25)
   * PostgreSQL (v14.2)
 
 ### Data
-To run OptiRef, data in the .owl or .dlp format is needed.
-
+To run OptiRef, data in the .owl or .dlp format is needed:
 * One file containing the ontology.
 * One or more files containing the data.
 
@@ -78,18 +77,4 @@ This script executes the queries from [FILE_NAME] on the database <DATABASE_NAME
 
 ```bash
 ./run_queries.sh <DATABASE_NAME>
-```
-1. `DB` defines the database name of the graph ,
-with the params in query.properties:
-2. `database.queries` defines the file containing the queries,
-3. `reformulation.approach` defines the Query Answering approach among:
-   - `UCQ` reformulation-based query answering  using RAPID
-   - `SCQ` reformulation-based query answering using COMPACT
-   - `JUCQ` reformulation-based query answering with using greedy optimization of query covers
-4. `database.pruning` specifies that the pruning is activated.
-5. `exps.output` the output folder, example ./myfolder/
-
-Example from the loaded lubm1M database with UCQ (RAPID) change the params from the query.properties file:
-```bash
-./run-exp.sh lubm1MDL
 ```
