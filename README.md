@@ -49,7 +49,7 @@ cd ../query
 mvn clean compile assembly:single
 ```
 ### Configuration Setup
-Prior to running the script, the following files must be modified to fit your setup: 
+Prior to running the scripts, the following files must be modified to fit your setup: 
 * `load.properties`
 * `summary.properties`
 * `query.properties`
