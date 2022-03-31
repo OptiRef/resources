@@ -1,0 +1,9 @@
+#Fact lubm:checking lubm:queries
+PREFIX lubm: http://swat.cse.lehigh.edu/onto/univ-bench.owl#
+
+qc0(?0) <- lubm:Person(?0), lubm:Organization(?0)
+qc1(?0) <- lubm:Organization(?0), lubm:Student(?0)
+qc2(?0) <- lubm:Organization(?0), lubm:Publication(?0)
+qc3(?0) <- lubm:Professor(?0), lubm:Department(?0)
+qc4(?0) <- lubm:Professor(?0), lubm:Publication(?0)
+
