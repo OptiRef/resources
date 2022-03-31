@@ -27,28 +27,28 @@ The queries used are in the file [FILE_NAME]
 
 ## Installation
 
-### Module Compilation
+The following modules must be compiled separately as follows:
 
-#### Data Loader
+### Data Loader
 
 ```bash
 cd loadDL
 mvn clean compile assembly:single
 ```
-#### Summary Generator
+### Summary Generator
 
 ```bash
 cd ../summary
 mvn clean compile assembly:single
 ```
 
-#### Query Executor
+### Query Executor
 
 ```bash
 cd ../query
 mvn clean compile assembly:single
 ```
-### Configuration Setup
+## Configuration Setup
 Prior to running the scripts, the following files must be modified to fit your setup: 
 * `load.properties`
 * `summary.properties`
