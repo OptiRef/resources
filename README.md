@@ -58,23 +58,25 @@ Prior to running the script, the following files must be modified to fit your se
 
 ### Loading the data:
 
-This script loads the data from the .owl  or .dlp format into a database according to the parameters set in `load.properties`.
+First, to load the data from the .owl  or .dlp format into a database, run: 
 
 ```bash
 ./run_db.sh
 ```
+This script uses the parameters set in `load.properties`.
+
 
 ### Creating the summary :
-This script creates a summary table for each concept and each role in the database <DATABASE_NAME>, according to the parameters set in `summary.properties`.
+Next, to generate the summary tables (one table per concept and role) in the database <DATABASE_NAME>, run:
 
 ```bash
 ./run_summary.sh <DATABASE_NAME>
 ```
+This script uses the parameters set in `summary.properties`.
 
 ### Querying the data:
-
-This script executes the queries from [FILE_NAME] on the database <DATABASE_NAME>, according to the parameters set in `queries.properties`, and generates the performance results.
-
+Finally, to execute the queries found in [FILE_NAME] on the database <DATABASE_NAME>, and generate the results, run:
 ```bash
 ./run_queries.sh <DATABASE_NAME>
 ```
+This script uses the parameters set in `queries.properties`.
