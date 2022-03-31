@@ -12,7 +12,7 @@
   * PostgreSQL (v14.2)
 
 ### Data
-To run OptiRef, data in the .owl or .dlp format is needed:
+To run OptiRef, data in the .owl or .dlp format is required:
 * One file containing the ontology.
 * One or more files containing the data.
 
