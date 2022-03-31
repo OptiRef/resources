@@ -22,8 +22,12 @@ We used  the EUGen (v0.1b) data generator, provided with the extended LUBM bench
 The ontology used is LUBM-ex-20.owl.
 
 Both the generator and the ontology are available at: http://www.informatik.uni-bremen.de/~clu/combined/
+### Queries
+The queries used in experiments are in the files: 
+* ressources/lubm-cc.queries
+* ressources/lubm-qa.queries
 
-The queries used are in the file [FILE_NAME]
+
 
 ## Installation
 
