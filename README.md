@@ -27,7 +27,40 @@ The queries used in experiments are in the files:
 * `ressources/lubm-cc.queries`
 * `ressources/lubm-qa.queries`
 
+#### Example: ***Consistency Checking*** Queries for LUBM
+ 
+- C0(?0) <- lubm:Person(?0), lubm:Organization(?0)
 
+- C2(?0) <- lubm:Organization(?0), lubm:Student(?0)
+
+- C4(?0) <- lubm:Organization(?0), lubm:Publication(?0)
+
+- C6(?0) <- lubm:Professor(?0), lubm:Department(?0)
+
+- C8(?0) <- lubm:Professor(?0), lubm:Publication(?0)
+
+
+#### Example:  ***Query Answering*** Queries for LUBM
+
+- A0(?0,?2) <- lubm:Student(?0), lubm:takesCourse(?0,?1), lubm:Subj1Course(?1), lubm:teacherOf(?2,?1), lubm:Professor(?2), lubm:headOf(?2,?3), lubm:Subj1Department(?3), lubm:memberOf(?0,?3)
+
+- A1(?0) <- lubm:Person(?0), lubm:worksFor(?0,?1), lubm:Department(?1), lubm:takesCourse(?0,?2), lubm:Course(?2)
+
+- A2(?0) <- lubm:Student(?0), lubm:publicationAuthor(?1,?0), lubm:Publication(?1), lubm:teachingAssistantOf(?0,?2), lubm:Course(?2)
+
+- A3(?0) <- lubm:Faculty(?0), lubm:degreeFrom(?0,?1), lubm:University(?1), lubm:subOrganizationOf(?2,?1), lubm:Subj10Department(?2), lubm:memberOf(?0,?2)
+
+- A4(?1,?4) <- lubm:Subj3Department(?1), lubm:Subj4Department(?4), lubm:Subj10Professor(?0), lubm:memberOf(?0,?1), lubm:publicationAuthor(?2,?0), lubm:Professor(?3), lubm:memberOf(?3,?4), lubm:publicationAuthor(?2,?3)
+ 
+- A5(?0,?1,?2) <- lubm:Professor(?0), lubm:teacherOf(?0,?1), lubm:worksFor(?0,?2), lubm:degreeFrom(?0,"http://www.University870.edu"), lubm:researchInterest(?0,"Research21"), lubm:name(?0,"AssociateProfessor2"), lubm:emailAddress(?0,"AssociateProfessor2@Department1.University0.edu"), lubm:telephone(?0,"xxx-xxx-xxxx")
+
+- A6(?0,?2) <- lubm:Student(?0), lubm:takesCourse(?0,?1), lubm:Course(?1), lubm:teacherOf(?2,?1), lubm:Faculty(?2), lubm:worksFor(?2,?3), lubm:Subj5Department(?3), lubm:memberOf(?0,?3)
+ 
+- A7(?0,?1) <- lubm:Professor(?0), lubm:teacherOf(?0,?1), lubm:degreeFrom(?0,"http://www.University870.edu"), lubm:researchInterest(?0,"Research21"), lubm:name(?0,"AssociateProfessor2"), lubm:telephone(?0,"xxx-xxx-xxxx"), lubm:emailAddress(?0,"AssociateProfessor2@Department1.University0.edu")
+
+- A8(?0) <- lubm:Faculty(?0), lubm:mastersDegreeFrom(?0,?1), lubm:University(?1), lubm:subOrganizationOf(?2,?1), lubm:Subj10Department(?2), lubm:memberOf(?0,?2)
+
+- A9(?1,?4) <- lubm:Subj3Department(?1), lubm:Subj4Department(?4), lubm:Subj3Professor(?0), lubm:memberOf(?0,?1), lubm:publicationAuthor(?2,?0), lubm:Subj5Professor(?3), lubm:memberOf(?3,?4), lubm:publicationAuthor(?2,?3)
 
 ## Installation
 
