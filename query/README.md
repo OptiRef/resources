@@ -10,7 +10,7 @@ mvn clean compile assembly:single
 ```
 
 ## Execute 
-To execute the queries found in [FILE_NAME] on the database <DATABASE_NAME>, and generate the results, run from the main directory:
+To execute the queries found in [FILE_NAME] on the database <DATABASE_NAME>, and generate the results, run the following script from the main directory:
 ```bash
 ./run_queries.sh <DATABASE_NAME>
 ```
