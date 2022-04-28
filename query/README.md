@@ -1,7 +1,7 @@
 # Query Module
 
 ## Setup
-To execute this module, you must set up the parameters in the file `./queries.properties`
+To execute this module, you must set up the parameters in the file `./queries.properties`  from the main directory.
 
 ## Build
 
