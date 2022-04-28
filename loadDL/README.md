@@ -11,7 +11,7 @@ mvn clean compile assembly:single
 ```
 
 ## Execute
-To load the data from the .owl or .dlp format into a database, run: from the main directory:
+To load the data from the .owl or .dlp format into a database, run the following script from the main directory:
 ```bash
 ./run_db.sh <DATABASE_NAME>
 ```
