@@ -31,13 +31,13 @@ The queries used in experiments are in the files:
  
 - C0(?0) <- lubm:Person(?0), lubm:Organization(?0)
 
-- C2(?0) <- lubm:Organization(?0), lubm:Student(?0)
+- C1(?0) <- lubm:Organization(?0), lubm:Student(?0)
 
-- C4(?0) <- lubm:Organization(?0), lubm:Publication(?0)
+- C2(?0) <- lubm:Organization(?0), lubm:Publication(?0)
 
-- C6(?0) <- lubm:Professor(?0), lubm:Department(?0)
+- C3(?0) <- lubm:Professor(?0), lubm:Department(?0)
 
-- C8(?0) <- lubm:Professor(?0), lubm:Publication(?0)
+- C4(?0) <- lubm:Professor(?0), lubm:Publication(?0)
 
 
 #### Example:  ***Query Answering*** Queries for LUBM
