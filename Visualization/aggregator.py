@@ -266,7 +266,7 @@ def oneExp(EXP, BDD, rdbms, _approaches, expsdir="test", _cost=False, target_que
 
 from sklearn.metrics import classification_report
 
-def get_precision_recall(approach, path="/home/celvaigh/iblis/dl-sum4qa/exps-final/lubm140_db2/sql"):
+def get_precision_recall(approach, path="dl-sum4qa/exps-final/lubm140_db2/sql"):
     data = []
     y_pred, y_true = [], []
     print("#############   Evaluation on approach {}  #########".format(approach))
@@ -299,7 +299,7 @@ def get_precision_recall(approach, path="/home/celvaigh/iblis/dl-sum4qa/exps-fin
     target_names= ["0", "1"]
     print(classification_report(y_true, y_pred, target_names=target_names))
 
-def get_average(approach, path="/home/celvaigh/iblis/dl-sum4qa/exps-final/lubm140_db2/sql"):
+def get_average(approach, path="dl-sum4qa/exps-final/lubm140_db2/sql"):
     data = []
     y_pred, y_true = [], []
     print("#############   Evaluation on approach {}  #########".format(approach))
