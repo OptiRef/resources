@@ -279,7 +279,7 @@ public class DL2SQL {
 //		
 //		FileWriter writer;
 //		try {
-//			writer = new FileWriter("/home/celvaigh/Reasarch/graphSum/workspace/JUCQ/src/q1res.txt");
+//			writer = new FileWriter("graphSum/workspace/JUCQ/src/q1res.txt");
 //			writer.write(String.join("\nUNION\n", test.getReformulatedQueries()));
 //			//writer.write("The result : "+conn.getCount(toSQL())+"\n");
 //			writer.close();
@@ -288,7 +288,7 @@ public class DL2SQL {
 //			// TODO: handle exception
 //			e.printStackTrace();
 //		}
-//		//test.dump("/home/celvaigh/Reasarch/graphSum/workspace/JUCQ/src/q1res.txt");
+//		//test.dump("graphSum/workspace/JUCQ/src/q1res.txt");
 //		
 //	}
 
