@@ -453,7 +453,7 @@ public class Loader
 		File fileOnto = new File(filepathOnto);
 		BufferedReader brOnto = new BufferedReader(new FileReader(fileOnto));
 		String line = "";
-		//Wafaa
+		
 		//Reading the ontology
 		try {
 			System.out.println("Reading second file.");
