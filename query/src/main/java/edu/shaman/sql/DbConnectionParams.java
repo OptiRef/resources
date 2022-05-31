@@ -14,7 +14,7 @@ public class DbConnectionParams {
 	
 	public DbConnectionParams() {
 		connectionString = "jdbc:postgresql://localhost:5432/dls";
-		connectionUsername = "celvaigh";
+		connectionUsername = "user";
 		connectionPassword = "brexe";
 		
 	}
