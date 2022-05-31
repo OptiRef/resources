@@ -93,7 +93,7 @@ printf "y\ny\ny\n" | ./run_db_pa.sh lubm140M ressources/LUBM-ex-20.dlp /local/da
 # db2 -x "select 'runstats on table',substr(rtrim(tabschema)||'.'||rtrim(tabname),1,50),' and indexes all;'from syscat.tables where type = 'T' " > logs/runstats_$dbname.out
 # db2 -tvf logs/runstats_$dbname.out  >> logs/db2_out_$dbname.out
 
-# db2rbind $dbname -l logs/db2_$dbname.log all -u celvaigh -p Brexe31@@
+# db2rbind $dbname -l logs/db2_$dbname.log all -u user -p Brexe31@@
 
 # db2 connect reset
 
