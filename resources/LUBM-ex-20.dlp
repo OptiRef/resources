@@ -1,0 +1,219 @@
+@prefix ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+@top <http://www.w3.org/2002/07/owl#Thing>
+ ! :- <http://www.w3.org/2002/07/owl#Nothing>(X).
+ub:degreeFrom(X0, X1) :- ub:mastersDegreeFrom(X0, X1).
+ub:degreeFrom(X0, X1) :- ub:doctoralDegreeFrom(X0, X1).
+ub:memberOf(X0, X1) :- ub:worksFor(X0, X1).
+ub:degreeFrom(X0, X1) :- ub:undergraduateDegreeFrom(X0, X1).
+ub:worksFor(X0, X1) :- ub:headOf(X0, X1).
+ub:Person(X0) :- ub:mastersDegreeFrom(X0, X3).
+ub:Person(X0) :- ub:doctoralDegreeFrom(X0, X3).
+ub:Organization(X0) :- ub:affiliatedOrganizationOf(X0, X3).
+ub:Organization(X0) :- ub:orgPublication(X0, X3).
+ub:Software(X0) :- ub:softwareVersion(X0, X3).
+ub:Software(X0) :- ub:softwareDocumentation(X0, X3).
+ub:Schedule(X0) :- ub:listedCourse(X0, X3).
+ub:Publication(X0) :- ub:publicationAuthor(X0, X3).
+ub:TeachingAssistant(X0) :- ub:teachingAssistantOf(X0, X3).
+ub:Person(X0) :- ub:degreeFrom(X0, X3).
+ub:Person(X0) :- ub:advisor(X0, X3).
+ub:Student(X0) :- ub:hasExamRecord(X0, X3).
+ub:University(X0) :- ub:hasFaculty(X0, X3).
+ub:Employee(X0) :- ub:worksFor(X0, X3).
+ub:Faculty(X0) :- ub:isPartOfUniversity(X0, X3).
+ub:Publication(X0) :- ub:publicationResearch(X0, X3).
+ub:Organization(X0) :- ub:affiliateOf(X0, X3).
+ub:ResearchGroup(X0) :- ub:researchProject(X0, X3).
+ub:Organization(X0) :- ub:subOrganizationOf(X0, X3).
+ub:Professor(X0) :- ub:tenured(X0, X3).
+ub:Publication(X0) :- ub:publicationDate(X0, X3).
+ub:University(X0) :- ub:hasAlumnus(X0, X3).
+ub:Faculty(X0) :- ub:teacherOf(X0, X3).
+ub:Organization(X0) :- ub:member(X0, X3).
+ub:Person(X0) :- ub:undergraduateDegreeFrom(X0, X3).
+ub:isPartOfUniversity(X1, X0) :- ub:hasFaculty(X0, X1).
+ub:hasFaculty(X0, X1) :- ub:isPartOfUniversity(X1, X0).
+ub:hasAlumnus(X1, X0) :- ub:degreeFrom(X0, X1).
+ub:degreeFrom(X0, X1) :- ub:hasAlumnus(X1, X0).
+ub:memberOf(X1, X0) :- ub:member(X0, X1).
+ub:member(X0, X1) :- ub:memberOf(X1, X0).
+ub:Student(X0) :- ub:Subj8Student(X0).
+ub:Course(X0) :- ub:Subj5Course(X0).
+ub:memberOf(X0, X3), ub:Department(X3) :- ub:Student(X0).
+ub:mastersDegreeFrom(X0, X3), ub:University(X3) :- ub:Faculty(X0).
+ub:Student(X0) :- ub:Subj1Student(X0).
+ub:Course(X0) :- ub:Subj9Course(X0).
+ub:Person(X0) :- ub:Director(X0).
+ub:Department(X0) :- ub:Subj1Department(X0).
+ub:memberOf(X3, X0), ub:Student(X3) :- ub:Department(X0).
+ub:Course(X0) :- ub:GraduateCourse(X0).
+ub:Student(X0) :- ub:Subj5Student(X0).
+ub:Professor(X0) :- ub:Subj13Professor(X0).
+ub:Professor(X0) :- ub:Subj6Professor(X0).
+ub:Course(X0) :- ub:Subj14Course(X0).
+ub:Course(X0) :- ub:Subj12Course(X0).
+ub:Professor(X0) :- ub:FullProfessor(X0).
+ub:Course(X0) :- ub:Subj19Course(X0).
+ub:Student(X0) :- ub:Subj11Student(X0).
+ub:takesCourse(X0, X3), ub:GraduateCourse(X3) :- ub:GraduateStudent(X0).
+ub:Student(X0) :- ub:Subj19Student(X0).
+ub:teacherOf(X0, X3) :- ub:Professor(X0).
+ub:Professor(X0) :- ub:VisitingProfessor(X0).
+ub:Course(X0) :- ub:Subj3Course(X0).
+ub:headOf(X0, X3), ub:Program(X3) :- ub:Director(X0).
+ub:Professor(X0) :- ub:Subj8Professor(X0).
+ub:Course(X0) :- ub:Subj10Course(X0).
+ub:advisor(X0, X3) :- ub:GraduateStudent(X0).
+ub:Course(X0) :- ub:Subj15Course(X0).
+ub:Course(X0) :- ub:Subj1Course(X0).
+ub:Student(X0) :- ub:Subj16Student(X0).
+ub:Department(X0) :- ub:Subj10Department(X0).
+ub:worksFor(X3, X0), ub:Faculty(X3) :- ub:Department(X0).
+ub:worksFor(X0, X3), ub:ResearchGroup(X3) :- ub:ResearchAssistant(X0).
+ub:Student(X0) :- ub:Subj3Student(X0).
+ub:Professor(X0) :- ub:Subj19Professor(X0).
+ub:undergraduateDegreeFrom(X0, X3), ub:University(X3) :- ub:Faculty(X0).
+ub:Work(X0) :- ub:ExamRecord(X0).
+ub:orgPublication(X3, X0) :- ub:Publication(X0).
+ub:Organization(X0) :- ub:Institute(X0).
+ub:Professor(X0) :- ub:Subj2Professor(X0).
+ub:Course(X0) :- ub:Subj11Course(X0).
+ub:Department(X0) :- ub:Subj20Department(X0).
+ub:subOrganizationOf(X3, X0), ub:Department(X3) :- ub:University(X0).
+ub:Course(X0) :- ub:Subj16Course(X0).
+ub:Student(X0) :- ub:Subj7Student(X0).
+ub:Professor(X0) :- ub:Subj16Professor(X0).
+ub:Article(X0) :- ub:JournalArticle(X0).
+ub:headOf(X0, X3), ub:College(X3) :- ub:Dean(X0).
+ub:worksFor(X0, X3) :- ub:Employee(X0).
+ub:Professor(X0) :- ub:Subj12Professor(X0).
+ub:Professor(X0) :- ub:Subj17Professor(X0).
+ub:Professor(X0) :- ub:Subj7Professor(X0).
+ub:publicationAuthor(X3, X0) :- ub:Faculty(X0).
+ub:Student(X0) :- ub:Subj13Student(X0).
+ub:advisor(X3, X0) :- ub:Professor(X0).
+ub:Department(X0) :- ub:Subj12Department(X0).
+ub:Professor(X0) :- ub:Subj1Professor(X0).
+ub:Organization(X0) :- ub:University(X0).
+ub:Student(X0) :- ub:UndergraduateStudent(X0).
+ub:Professor(X0) :- ub:Subj4Professor(X0).
+ub:Publication(X0) :- ub:UnofficialPublication(X0).
+ub:Course(X0) :- ub:Subj17Course(X0).
+ub:Exam(X0) :- ub:BachelorExam(X0).
+ub:Publication(X0) :- ub:Specification(X0).
+ub:Student(X0) :- ub:Subj4Student(X0).
+ub:teacherOf(X3, X0) :- ub:Course(X0).
+ub:Professor(X0) :- ub:AssistantProfessor(X0).
+ub:Person(X0) :- ub:TeachingAssistant(X0).
+ub:Department(X0) :- ub:Subj7Department(X0).
+ub:Professor(X0) :- ub:Chair(X0).
+ub:takesCourse(X3, X0) :- ub:Course(X0).
+ub:Faculty(X0) :- ub:Lecturer(X0).
+ub:Professor(X0) :- ub:Subj18Professor(X0).
+ub:Student(X0) :- ub:Subj17Student(X0).
+ub:publicationAuthor(X0, X3) :- ub:Publication(X0).
+ub:Student(X0) :- ub:Subj10Student(X0).
+ub:Professor(X0) :- ub:Subj15Professor(X0).
+ub:Department(X0) :- ub:Subj4Department(X0).
+ub:Student(X0) :- ub:Subj20Student(X0).
+ub:Student(X0) :- ub:Subj18Student(X0).
+ub:Department(X0) :- ub:Subj5Department(X0).
+ub:Course(X0) :- ub:Subj13Course(X0).
+ub:Department(X0) :- ub:Subj14Department(X0).
+ub:Course(X0) :- ub:Subj18Course(X0).
+ub:Publication(X0) :- ub:Software(X0).
+ub:Work(X0) :- ub:Course(X0).
+ub:Employee(X0) :- ub:AdministrativeStaff(X0).
+ub:Professor(X0) :- ub:ExDean(X0).
+ub:Work(X0) :- ub:Exam(X0).
+ub:Organization(X0) :- ub:College(X0).
+ub:Professor(X0) :- ub:Subj3Professor(X0).
+ub:AdministrativeStaff(X0) :- ub:SystemsStaff(X0).
+ub:publicationResearch(X3, X0) :- ub:Research(X0).
+ub:takesCourse(X0, X3) :- ub:Student(X0).
+ub:Department(X0) :- ub:Subj9Department(X0).
+ub:teacherOf(X0, X3) :- ub:Lecturer(X0).
+ub:Student(X0) :- ub:Subj15Student(X0).
+ub:Student(X0) :- ub:Subj2Student(X0).
+ub:Publication(X0) :- ub:Manual(X0).
+ub:Department(X0) :- ub:Subj19Department(X0).
+ub:Publication(X0) :- ub:Article(X0).
+ub:Professor(X0) :- ub:Subj20Professor(X0).
+ub:Department(X0) :- ub:Subj6Department(X0).
+ub:Professor(X0) :- ub:Subj14Professor(X0).
+ub:Department(X0) :- ub:Subj11Department(X0).
+ub:doctoralDegreeFrom(X0, X3), ub:University(X3) :- ub:Faculty(X0).
+ub:Course(X0) :- ub:Subj6Course(X0).
+ub:Professor(X0) :- ub:AssociateProfessor(X0).
+ub:Department(X0) :- ub:Subj16Department(X0).
+ub:Student(X0) :- ub:Subj6Student(X0).
+ub:Person(X0) :- ub:Employee(X0).
+ub:Person(X0) :- ub:GraduateStudent(X0).
+ub:Person(X0) :- ub:Student(X0).
+ub:Professor(X0) :- ub:Subj11Professor(X0).
+ub:Student(X0) :- ub:Subj9Student(X0).
+ub:Employee(X0) :- ub:Faculty(X0).
+ub:Organization(X0) :- ub:Program(X0).
+ub:Publication(X0) :- ub:Book(X0).
+ub:Student(X0) :- ub:Subj12Student(X0).
+ub:Person(X0) :- ub:ResearchAssistant(X0).
+ub:Article(X0) :- ub:TechnicalReport(X0).
+ub:Organization(X0) :- ub:Department(X0).
+ub:Professor(X0) :- ub:Subj9Professor(X0).
+ub:Course(X0) :- ub:Subj2Course(X0).
+ub:undergraduateDegreeFrom(X0, X3), ub:University(X3) :- ub:GraduateStudent(X0).
+ub:Faculty(X0) :- ub:PostDoc(X0).
+ub:Course(X0) :- ub:Subj7Course(X0).
+ub:Organization(X0) :- ub:ResearchGroup(X0).
+ub:teachingAssistantOf(X3, X0) :- ub:Course(X0).
+ub:Department(X0) :- ub:Subj8Department(X0).
+ub:researchProject(X0, X3) :- ub:ResearchGroup(X0).
+ub:Professor(X0) :- ub:Subj5Professor(X0).
+ub:Course(X0) :- ub:Subj20Course(X0).
+ub:Professor(X0) :- ub:Dean(X0).
+ub:Department(X0) :- ub:Subj3Department(X0).
+ub:headOf(X0, X3), ub:Department(X3) :- ub:Chair(X0).
+ub:Faculty(X0) :- ub:Professor(X0).
+ub:Department(X0) :- ub:Subj18Department(X0).
+ub:Student(X0) :- ub:Subj14Student(X0).
+ub:teachingAssistantOf(X0, X3), ub:Course(X3) :- ub:TeachingAssistant(X0).
+ub:publicationResearch(X0, X3) :- ub:Publication(X0).
+ub:Department(X0) :- ub:Subj2Department(X0).
+ub:Department(X0) :- ub:Subj15Department(X0).
+ub:Professor(X0) :- ub:Subj10Professor(X0).
+ub:Article(X0) :- ub:ConferencePaper(X0).
+ub:Course(X0) :- ub:Subj8Course(X0).
+ub:Course(X0) :- ub:Subj4Course(X0).
+ub:Department(X0) :- ub:Subj13Department(X0).
+ub:Work(X0) :- ub:Research(X0).
+ub:AdministrativeStaff(X0) :- ub:ClericalStaff(X0).
+ub:Person(X0) :- ub:Chair(X0).
+ub:Department(X0) :- ub:Subj17Department(X0).
+ub:worksFor(X0, X3), ub:Department(X3) :- ub:Faculty(X0).
+ub:Organization(X0) :- ub:affiliatedOrganizationOf(X3, X0).
+ub:Publication(X0) :- ub:softwareDocumentation(X3, X0).
+ub:University(X0) :- ub:mastersDegreeFrom(X3, X0).
+ub:University(X0) :- ub:isPartOfUniversity(X3, X0).
+ub:Faculty(X0) :- ub:hasFaculty(X3, X0).
+ub:University(X0) :- ub:undergraduateDegreeFrom(X3, X0).
+ub:Publication(X0) :- ub:orgPublication(X3, X0).
+ub:Professor(X0) :- ub:advisor(X3, X0).
+ub:Person(X0) :- ub:member(X3, X0).
+ub:Organization(X0) :- ub:subOrganizationOf(X3, X0).
+ub:Person(X0) :- ub:hasAlumnus(X3, X0).
+ub:Person(X0) :- ub:publicationAuthor(X3, X0).
+ub:Research(X0) :- ub:researchProject(X3, X0).
+ub:University(X0) :- ub:degreeFrom(X3, X0).
+ub:Research(X0) :- ub:publicationResearch(X3, X0).
+ub:ExamRecord(X0) :- ub:hasExamRecord(X3, X0).
+ub:Person(X0) :- ub:affiliateOf(X3, X0).
+ub:Course(X0) :- ub:takesCourse(X3, X0).
+ub:Course(X0) :- ub:teachingAssistantOf(X3, X0).
+ub:Course(X0) :- ub:teacherOf(X3, X0).
+ub:Course(X0) :- ub:listedCourse(X3, X0).
+ub:University(X0) :- ub:doctoralDegreeFrom(X3, X0).
+ub:Person(X0) :- ub:title(X0, X3).
+ub:Person(X0) :- ub:telephone(X0, X3).
+ub:Person(X0) :- ub:age(X0, X3).
+ub:Person(X0) :- ub:emailAddress(X0, X3).

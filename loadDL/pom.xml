@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.optiref.load</groupId>
+  <artifactId>loadDL</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>loadDL</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.2</version>
+    </dependency>
+  	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.25</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ibm.db2</groupId>
+      <artifactId>jcc</artifactId>
+      <version>11.5.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>me.tongfei</groupId>
+      <artifactId>progressbar</artifactId>
+      <version>0.9.1</version>
+  	</dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>30.1.1-jre</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>4.4</version>
+  </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>loadDL</finalName>
+    <directory>${project.basedir}/target/</directory>
+    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <plugins>
+      <!-- download source code in Eclipse, best practice -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-eclipse-plugin</artifactId>
+      <version>2.9</version>
+      <configuration>
+        <downloadSources>true</downloadSources>
+        <downloadJavadocs>false</downloadJavadocs>
+      </configuration>
+    </plugin>
+    <!-- Set a compiler level -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.2</version>
+      <configuration>
+        <source>${jdk.version}</source>
+        <target>${jdk.version}</target>
+      </configuration>
+    </plugin>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>fr.optiref.load.Loader</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+</project>

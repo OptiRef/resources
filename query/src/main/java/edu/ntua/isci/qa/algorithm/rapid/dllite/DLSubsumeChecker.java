@@ -1,0 +1,47 @@
+/*Copyright 2011, 2013, 2015 Alexandros Chortaras
+
+ This file is part of Rapid.
+
+ Rapid is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Rapid is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Rapid.  If not, see <http://www.gnu.org/licenses/>.*/
+
+package edu.ntua.isci.qa.algorithm.rapid.dllite;
+
+import java.util.ArrayList;
+
+import edu.ntua.isci.common.lp.Atom;
+
+import edu.ntua.isci.qa.algorithm.rapid.Point;
+import edu.ntua.isci.qa.algorithm.rapid.UnfoldedClause;
+import edu.ntua.isci.qa.algorithm.rapid.ClauseUnfolder;
+
+public abstract class DLSubsumeChecker {
+	
+	public static boolean extra;
+	
+	public abstract UnfoldedClause check(Atom head, DLIndexEntryList[] atomList, int[] index, boolean isSymmetric, ClauseUnfolder unf);
+
+	protected ArrayList<Point> adjustIndex(int[] index) {
+		ArrayList<Point> pIndex = new ArrayList<Point>();
+		for (int i = 0 ; i < index.length; i++) {
+			if (index[i] == -1) {
+				pIndex.add(null);
+			} else {
+				pIndex.add(new Point(i, index[i]));
+			}
+		}
+
+		return pIndex;
+	}
+
+}

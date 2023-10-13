@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.optiref.dlquery</groupId>
+  <artifactId>query</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+
+  <name>query</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.8</jdk.version>
+    <graal.version>1.3.1</graal.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.semanticweb.owlapi</groupId>
+        <artifactId>owlapi</artifactId>
+        <scope>system</scope>
+        <version>3.4.1</version>
+        <systemPath>${basedir}/lib/owlapi-bin-3.4.1.jar</systemPath>
+    </dependency>
+
+  <dependency>
+      <groupId>net.sourceforge.owlapi</groupId>
+      <artifactId>owlapi-distribution</artifactId>
+      <version>3.4.1</version>
+  </dependency>
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.32</version>
+</dependency>
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.32</version>
+</dependency>
+  <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>19.0</version>
+  </dependency>
+  <dependency>
+    <groupId>fr.lirmm.graphik</groupId>
+    <artifactId>graal-api</artifactId>
+    <version>${graal.version}</version>
+  </dependency>
+      <dependency>
+    <groupId>fr.lirmm.graphik</groupId>
+    <artifactId>graal-homomorphism</artifactId>
+    <version>${graal.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.beust</groupId>
+    <artifactId>jcommander</artifactId>
+    <version>1.48</version>
+  </dependency>
+  <dependency>
+    <groupId>fr.lirmm.graphik</groupId>
+    <artifactId>graal-util</artifactId>
+    <version>${graal.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>fr.lirmm.graphik</groupId>
+    <artifactId>graal-core</artifactId>
+    <version>${graal.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>fr.lirmm.graphik</groupId>
+    <artifactId>graal-io-dlgp</artifactId>
+    <version>${graal.version}</version>
+  </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.2</version>
+    </dependency>
+  	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.25</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ibm.db2</groupId>
+      <artifactId>jcc</artifactId>
+      <version>11.5.5.0</version>
+    </dependency>
+     <dependency>
+      <groupId>me.tongfei</groupId>
+      <artifactId>progressbar</artifactId>
+      <version>0.9.1</version>
+  	</dependency>
+  <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+  </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>query</finalName>
+    <directory>${project.basedir}/target/</directory>
+    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <plugins>
+      <!-- download source code in Eclipse, best practice -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>false</downloadJavadocs>
+        </configuration>
+      </plugin>
+      <!-- Set a compiler level -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>${jdk.version}</source>
+          <target>${jdk.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>fr.optiref.dlquery.QueryDL</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+
+      </plugin>
+
+    </plugins>
+  </build>
+</project>
